@@ -18,7 +18,7 @@ bool E0::transition(Automate & automate, Symbole * s) {
             automate.transitionsimple(s, new E1);
             break;
         default:
-            throw "Syntaxe invalide : " + Etiquettes[*s];
+            throw "Syntaxe invalide : " + Etiquettes[*s] + " à la position " + to_string(automate.getIndex());
     }
     return false;
 }
@@ -34,7 +34,7 @@ bool E1::transition(Automate & automate, Symbole * s) {
         case FIN:
             return true;
         default:
-            throw "Syntaxe invalide : " + Etiquettes[*s];
+            throw "Syntaxe invalide : " + Etiquettes[*s] + " à la position " + to_string(automate.getIndex());
     }
     return false;
 }
@@ -51,7 +51,7 @@ bool E2::transition(Automate & automate, Symbole * s) {
             automate.transitionsimple(s, new E6);
             break;
         default:
-            throw "Syntaxe invalide : " + Etiquettes[*s];
+            throw "Syntaxe invalide : " + Etiquettes[*s] + " à la position " + to_string(automate.getIndex());
     }
     return false;
 }
@@ -68,7 +68,7 @@ bool E3::transition(Automate & automate, Symbole * s) {
             delete s1;
             break;
         default:
-            throw "Syntaxe invalide : " + Etiquettes[*s];
+            throw "Syntaxe invalide : " + Etiquettes[*s] + " à la position " + to_string(automate.getIndex());
     }
     return false;
 }
@@ -85,7 +85,7 @@ bool E4::transition(Automate & automate, Symbole * s) {
             automate.transitionsimple(s, new E7);
             break;
         default:
-            throw "Syntaxe invalide : " + Etiquettes[*s];
+            throw "Syntaxe invalide : " + Etiquettes[*s] + " à la position " + to_string(automate.getIndex());
     }
     return false;
 }
@@ -102,7 +102,7 @@ bool E5::transition(Automate & automate, Symbole * s) {
             automate.transitionsimple(s, new E8);
             break;
         default:
-            throw "Syntaxe invalide : " + Etiquettes[*s];
+            throw "Syntaxe invalide : " + Etiquettes[*s] + " à la position " + to_string(automate.getIndex());
     }
     return false;
 }
@@ -119,7 +119,7 @@ bool E6::transition(Automate & automate, Symbole * s) {
             automate.decalage(s, new E9);
             break;
         default:
-            throw "Syntaxe invalide : " + Etiquettes[*s];
+            throw "Syntaxe invalide : " + Etiquettes[*s] + " à la position " + to_string(automate.getIndex());
     }
     return false;
 }
@@ -141,7 +141,7 @@ bool E7::transition(Automate & automate, Symbole * s) {
             automate.decalage(s, new E5);
             break;
         default:
-            throw "Syntaxe invalide : " + Etiquettes[*s];
+            throw "Syntaxe invalide : " + Etiquettes[*s] + " à la position " + to_string(automate.getIndex());
     }
     return false;
 }
@@ -161,7 +161,7 @@ bool E8::transition(Automate & automate, Symbole * s) {
             delete s2;
             break;
         default:
-            throw "Syntaxe invalide : " + Etiquettes[*s];
+            throw "Syntaxe invalide : " + Etiquettes[*s] + " à la position " + to_string(automate.getIndex());
     }
     return false;
 }
@@ -179,7 +179,7 @@ bool E9::transition(Automate & automate, Symbole * s) {
             automate.reduction(3, s1);
             break;
         default:
-            throw "Syntaxe invalide : " + Etiquettes[*s];
+            throw "Syntaxe invalide : " + Etiquettes[*s] + " à la position " + to_string(automate.getIndex());
     }
     return false;
 }

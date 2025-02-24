@@ -8,11 +8,10 @@ Lexer::~Lexer() {
 Symbole * Lexer::Consulter() {
    if (!tampon) {
 
-      if (tete == flux.length())
+      if (tete == flux.length()) {
          tampon = new Symbole(FIN);
-      else
-      {
-
+      }
+      else {
          switch (flux[tete]) {
             case '(':
                tampon = new Symbole(OPENPAR);
@@ -44,6 +43,7 @@ Symbole * Lexer::Consulter() {
                else {
                   tampon = new Symbole(ERREUR);
                }
+               break;
          }
       }
    }

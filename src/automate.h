@@ -23,6 +23,8 @@ class Automate {
         void popAndDestroySymbol();
         void popAndDestroyState();
 
+        size_t getIndex() { return lexer->getTete(); };
+
     protected:
         Lexer * lexer;
         deque<Symbole *> symbolStack;

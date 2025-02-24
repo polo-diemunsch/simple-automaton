@@ -2,7 +2,6 @@
 #include "automate.h"
 #include "lexer.h"
 
-
 int main(void) {
    string chaine("(1+34)*123");
 
