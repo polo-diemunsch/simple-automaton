@@ -14,7 +14,7 @@ REAL=$(INT:.h=.cpp)
 OBJ=$(INT:.h=.o)
 EFFACE=clean
 BIN=bin
-EXE=$(BIN)/lexer
+EXE=$(BIN)/automaton
 
 .PHONY:$(EFFACE)
 
