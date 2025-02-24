@@ -3,12 +3,19 @@
 #include "lexer.h"
 
 int main(void) {
-   string chaine("(1+34)*123");
+   cout << "Entrez une expression :" << endl;
+
+   string chaine;
+   getline(cin, chaine);
+
+   if (chaine.empty()) {
+      chaine = "(1+34)*123";
+   }
 
    Lexer lexer(chaine);
    Automate automate = Automate(&lexer);
 
-   cout << "Analyse de l'expression : " << chaine << endl;
+   cout << "Analyse de l'expression '" << chaine << "'" << endl;
 
    try {
       int result = automate.lecture();
