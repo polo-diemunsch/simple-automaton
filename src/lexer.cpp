@@ -1,5 +1,10 @@
 #include "lexer.h"
 
+Lexer::~Lexer() {
+   if (tampon)
+      delete tampon;
+}
+
 Symbole * Lexer::Consulter() {
    if (!tampon) {
 

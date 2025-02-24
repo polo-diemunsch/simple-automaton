@@ -3,13 +3,13 @@ RM=rm
 MKDIR=mkdir
 EDL=g++
 COMP=g++
-CCFLAGS=-ansi -pedantic -Wall -std=c++17 # -g -DMAP
+CCFLAGS=-ansi -pedantic -Wall -std=c++17 -g
 RMFLAGS=-f
 LDFLAGS=$(CCFLAGS)
 LIBS=-lm
 SRC=src
 MAINFILE=$(SRC)/main
-INT=$(addprefix $(SRC)/, lexer.h symbole.h)
+INT=$(addprefix $(SRC)/, lexer.h symbole.h automate.h etat.h)
 REAL=$(INT:.h=.cpp)
 OBJ=$(INT:.h=.o)
 EFFACE=clean

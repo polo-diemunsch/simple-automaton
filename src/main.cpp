@@ -1,18 +1,24 @@
 #include <iostream>
+#include "automate.h"
 #include "lexer.h"
 
 
 int main(void) {
    string chaine("(1+34)*123");
 
-   Lexer l(chaine);
+   Lexer lexer(chaine);
+   Automate automate = Automate(&lexer);
 
-   Symbole * s;
-   while (*(s = l.Consulter()) != FIN) {
-      s->Affiche();
-      cout << endl;
-      l.Avancer();
+   cout << "Analyse de l'expression : " << chaine << endl;
+
+   try {
+      int result = automate.lecture();
+      cout << "Résultat : " << result << endl;
    }
+   catch (const string & error) {
+      cout << error << endl;
+   }
+
    return 0;
 }
 
